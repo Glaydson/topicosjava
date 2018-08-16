@@ -1,5 +1,7 @@
 package streams;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.stream.IntStream;
 
 public class OperacoesIntStream {
@@ -37,6 +39,7 @@ public class OperacoesIntStream {
 		System.out.printf("%nValores pares exibidos em ordem: ");
 		IntStream.of(valores)
 			.filter(valor -> valor % 2 == 0)
+			//.map(i -> -i).sorted().map(i -> -i)    // trick para ordenar em ordem descrescente
 			.sorted()
 			.forEach(valor -> System.out.printf("%d ", valor));
 		System.out.println();
