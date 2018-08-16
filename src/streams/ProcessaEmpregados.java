@@ -20,7 +20,8 @@ public class ProcessaEmpregados {
 				new Empregado("Ciro", "Gomes", 4700.77, "Marketing"),
 				new Empregado("Tasso", "Jereissati", 6200, "IT"),
 				new Empregado("Camilo", "Santana", 3200, "Vendas"),
-				new Empregado("José", "Sarney", 4236.4, "Marketing"),
+				new Empregado("Cid", "Gomes", 4236.4, "Marketing"),
+				new Empregado("Cid", "Santana", 4500, "RH")
 		};
 		
 		// obtém uma lista dos empregados
@@ -52,18 +53,18 @@ public class ProcessaEmpregados {
 		Function<Empregado, String> ultimoNome = Empregado::getUltimoNome;
 		
 		// Comparador para comparar Empregados pelo primeiro nome e depois pelo último
-		Comparator<Empregado> ultimoDepoisPrimeiro = Comparator.comparing(ultimoNome).thenComparing(primeiroNome);
+		Comparator<Empregado> primeiroDepoisUltimo = Comparator.comparing(primeiroNome).thenComparing(ultimoNome);
 		
-		// Ordena os empregados pelo último nome, e depois pelo primeiro nome
-		System.out.printf("%nEmpregados em ordem ascendente por último nome e depois pelo primeiro:%n");
+		// Ordena os empregados pelo primeiro nome, e depois pelo último nome
+		System.out.printf("%nEmpregados em ordem ascendente por primeiro nome e depois pelo último:%n");
 		lista.stream()
-			.sorted(ultimoDepoisPrimeiro)
+			.sorted(primeiroDepoisUltimo)
 			.forEach(System.out::println);
 		
-		// ordena os empregados em ordem descendente pelo último nome e depois pelo primeiro
-		System.out.printf("%nEmpregados em ordem descendente por último nome e depois pelo primeiro:%n");
+		// ordena os empregados em ordem descendente pelo primeiro nome e depois pelo último
+		System.out.printf("%nEmpregados em ordem descendente por primeiro nome e depois pelo último:%n");
 		lista.stream()
-			.sorted(ultimoDepoisPrimeiro.reversed())
+			.sorted(primeiroDepoisUltimo.reversed())
 			.forEach(System.out::println);
 		
 		// Exibe últimos nomes únicos dos empregados em ordem
@@ -75,9 +76,9 @@ public class ProcessaEmpregados {
 			.forEach(System.out::println);
 		
 		// Exibe somente o primeiro e último nomes
-		System.out.printf("%nNomes dos empregados em ordem de último nome e depois do primeiro nome:%n");
+		System.out.printf("%nNomes dos empregados em ordem de primeiro nome e depois do último nome:%n");
 		lista.stream()
-			.sorted(ultimoDepoisPrimeiro)
+			.sorted(primeiroDepoisUltimo)
 			.map(Empregado::getNome)
 			.forEach(System.out::println);
 		
@@ -106,6 +107,26 @@ public class ProcessaEmpregados {
 		numeroEmpregadosPorDepartamento.forEach(
 				(departamento, quantidade) -> System.out.printf(
 						"%s possui %d empregado(s)%n", departamento, quantidade));
+		
+		// Soma dos salários dos empregados com DoubleStream sum
+		System.out.printf("%nSoma dos salários dos empregados (método sum): %.2f%n",
+				lista.stream()
+					.mapToDouble(Empregado::getSalario)
+					.sum());
+		
+		// Soma dos salários dos empregados com o método reduce
+		System.out.printf("%nSoma dos salários dos empregados (método reduce): %.2f%n",
+				lista.stream()
+					.mapToDouble(Empregado::getSalario)
+					.reduce(0, (valor1, valor2) -> valor1 + valor2));
+		
+		// Média dos salários
+		System.out.printf("%nMédia dos salários dos empregados (método average): %.2f%n",
+				lista.stream()
+					.mapToDouble(Empregado::getSalario)
+					.average()
+					.getAsDouble());
+		
 		
 	}
 
