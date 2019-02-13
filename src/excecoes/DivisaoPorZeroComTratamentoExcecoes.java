@@ -28,11 +28,12 @@ public class DivisaoPorZeroComTratamentoExcecoes {
 				System.err.printf("%nExceção: %s%n", ime);
 				scanner.nextLine();    // descarta a entrada para que o usuário possa tentar de novo
 				System.out.printf("Você deve entrar inteiros. Por favor tente novamente.%n%n");
-			}
-			catch (ArithmeticException ae) {
+			} catch (ArithmeticException ae) {
 				System.err.printf("%nExceção: %s%n", ae);
 				scanner.nextLine();    // descarta a entrada para que o usuário possa tentar de novo
-				System.out.printf("Zero é um denominador inválido. Por favor t100ente novamente.%n%n");
+				System.out.printf("Zero é um denominador inválido. Por favor tente novamente.%n%n");
+			} finally {
+				System.out.println("Eu sempre vou aparecer.");
 			}
 		} while (continuaLoop);
 		scanner.close();

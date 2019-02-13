@@ -1,5 +1,8 @@
 package generics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Maximo {
 
 	public static void main(String[] args) {
@@ -7,6 +10,8 @@ public class Maximo {
 		System.out.printf("O máximo entre %.1f, %.1f e %.1f é %.1f%n%n", 6.6, 8.8, 7.7, maximo(6.6, 8.8, 7.7));
 		System.out.printf("O máximo entre %s, %s e %s é %s%n%n", "pera", "maçã", "laranja",
 				maximo("pera", "maçã", "laranja"));
+		
+		
 	}
 
 	public static <T extends Comparable<T>> T maximo(T x, T y, T z) {

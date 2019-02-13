@@ -25,5 +25,10 @@ public class Pilha<T> {
 		return elementos.remove(elementos.size() - 1);
 	}
 
+	public void imprimePilha() {
+		for (T elemento : elementos)
+			System.out.printf("%s ", elemento);
+		System.out.println();
+	}
 }
 
