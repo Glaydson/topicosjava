@@ -22,7 +22,7 @@ public class DivisaoPorZeroComTratamentoExcecoes {
 				System.out.println("Por favor entre um denominador inteiro: ");
 				int denominador = scanner.nextInt();
 				int resultado = quociente(numerador, denominador);
-				System.out.printf("%nResultado: %d / %d = %d", numerador, denominador, resultado);
+				System.out.printf("%nResultado: %d / %d = %d%n", numerador, denominador, resultado);
 				continuaLoop = false;  // entrada bem sucedida, termina o loop
 			} catch (InputMismatchException ime) {
 				System.err.printf("%nExceção: %s%n", ime);
