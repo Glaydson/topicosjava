@@ -15,6 +15,7 @@ public class DivisaoPorZeroSemTratamentoExcecoes {
 
 		System.out.println("Por favor entre um numerador inteiro: ");
 		int numerador = scanner.nextInt();
+		System.out.println("Recebi o numerador, obrigado!");
 		System.out.println("Por favor entre um denominador inteiro: ");
 		int denominador = scanner.nextInt();
 
