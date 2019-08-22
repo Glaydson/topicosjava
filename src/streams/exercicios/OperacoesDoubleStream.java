@@ -1,4 +1,4 @@
-package streams;
+package streams.exercicios;
 
 import java.util.function.DoubleUnaryOperator;
 import java.util.stream.DoubleStream;
