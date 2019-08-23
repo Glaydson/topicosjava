@@ -16,7 +16,7 @@ public class TesteColecoes {
 		for (String cor : cores) {
 			lista.add(cor); // Adiciona a cor no final da lista
 		}
-
+		
 		// Cria um novo array de cores e adiciona a uma lista
 		String[] removeCores = { "VERMELHO", "BRANCO", "AZUL" };
 		List<String> listaRemocao = new ArrayList<String>();

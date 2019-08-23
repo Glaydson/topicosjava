@@ -20,6 +20,15 @@ public class TestePilhaGenerica {
 		minhaPilha.pop();
 		
 		minhaPilha.imprimePilha();
+		
+		Pilha<Integer> pilhaInteiros = new Pilha<Integer>();
+		pilhaInteiros.push(1);
+		pilhaInteiros.push(2);
+		pilhaInteiros.push(3);
+		pilhaInteiros.push(4);
+		pilhaInteiros.push(5);
+		
+		pilhaInteiros.imprimePilha();
 	}
 
 }
