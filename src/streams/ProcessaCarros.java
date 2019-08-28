@@ -8,6 +8,8 @@ import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import streams.exercicios.Carro;
+
 public class ProcessaCarros {
 
 	public static void main(String[] args) {

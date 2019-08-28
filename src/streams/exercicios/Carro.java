@@ -1,4 +1,4 @@
-package streams;
+package streams.exercicios;
 
 public class Carro {
 
