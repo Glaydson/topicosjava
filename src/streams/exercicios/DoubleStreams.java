@@ -1,8 +1,6 @@
 package streams.exercicios;
 
-import java.util.OptionalInt;
 import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
 
 public class DoubleStreams {
 

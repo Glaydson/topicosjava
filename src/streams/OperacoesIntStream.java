@@ -1,7 +1,5 @@
 package streams;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
@@ -25,9 +23,6 @@ public class OperacoesIntStream {
 		System.out.println();
 
 		// count, min, max, sum e average dos valores
-		
-		IntStream fluxo1 = IntStream.of(valores);
-		long quantidadeElementos = fluxo1.count();
 		
 		System.out.printf("%nCount: %d%n", IntStream.of(valores).count());
 		
